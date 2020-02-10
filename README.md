@@ -30,6 +30,7 @@ USAGE
 <!-- commands -->
 * [`easy-mock-api hello [FILE]`](#easy-mock-api-hello-file)
 * [`easy-mock-api help [COMMAND]`](#easy-mock-api-help-command)
+* [`easy-mock-api init [FILE]`](#easy-mock-api-init-file)
 
 ## `easy-mock-api hello [FILE]`
 
@@ -67,4 +68,20 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
+
+## `easy-mock-api init [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ easy-mock-api init [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/init.ts](https://github.com/private/easy-mock-api/blob/v0.0.0/src/commands/init.ts)_
 <!-- commandsstop -->
