@@ -1,25 +1,47 @@
-import {Command, flags} from '@oclif/command'
+import { Command, flags } from '@oclif/command';
+import mkdirp = require('mkdirp');
+import { prompt } from 'enquirer';
+import * as fs from 'fs';
+import { dirPath, fileName } from '../constants/config';
 
 export default class Init extends Command {
-  static description = 'describe the command here'
+  static description = 'generate json file';
 
   static flags = {
-    help: flags.help({char: 'h'}),
-    // flag with a value (-n, --name=VALUE)
-    name: flags.string({char: 'n', description: 'name to print'}),
-    // flag with no value (-f, --force)
-    force: flags.boolean({char: 'f'}),
-  }
-
-  static args = [{name: 'file'}]
+    help: flags.help({ char: 'h' })
+  };
 
   async run() {
-    const {args, flags} = this.parse(Init)
-
-    const name = flags.name || 'world'
-    this.log(`hello ${name} from /Users/k.soga/work/private/easy-mock-api/src/commands/init.ts`)
-    if (args.file && flags.force) {
-      this.log(`you input --force and --file: ${args.file}`)
-    }
+    const response: Response = await prompt({
+      type: 'input',
+      name: 'value',
+      message: 'enter the api path',
+      initial: '/sample'
+    });
+    mkdirp.sync(dirPath);
+    fs.writeFileSync(
+      `${dirPath}/${fileName}`,
+      JSON.stringify(this.generateJson(response.value))
+    );
   }
+
+  generateJson(endpoint: string): DefaultJsonFormat {
+    return {
+      endpoint: endpoint,
+      delay: 5000,
+      body: {
+        greeting: 'hello'
+      }
+    };
+  }
+}
+
+interface Response {
+  value: string;
+}
+
+interface DefaultJsonFormat {
+  endpoint: string;
+  delay: number;
+  body: any;
 }
