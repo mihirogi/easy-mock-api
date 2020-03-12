@@ -1,17 +1,13 @@
-import { expect, test } from '@oclif/test';
+import {expect, test} from '@oclif/test'
+import enquirer = require('enquirer');
+import {Response} from '../../src/commands/init'
 
 describe('init', () => {
   test
-    .stdout()
-    .command(['init'])
-    .it('runs hello', ctx => {
-      expect(ctx.stdout).to.contain('hello world');
-    });
-
-  test
-    .stdout()
-    .command(['init', '--name', 'jeff'])
-    .it('runs hello --name jeff', ctx => {
-      expect(ctx.stdout).to.contain('hello jeff');
-    });
-});
+  .stub(enquirer, 'prompt', () => (): Response => {
+    return {value: '/hello'}
+  })
+  .stdout({print: true})
+  .command('init')
+  .it('runs init', ctx => {})
+})
