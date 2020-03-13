@@ -40,7 +40,7 @@ export interface Response {
   value: string;
 }
 
-interface DefaultJsonFormat {
+export interface DefaultJsonFormat {
   endpoint: string;
   delay: number;
   body: any;
