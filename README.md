@@ -17,54 +17,21 @@ easy!
 ```sh-session
 $ npm install -g easy-mock-api
 $ easy-mock-api COMMAND
-running command...
-$ easy-mock-api (-v|--version|version)
-easy-mock-api/0.0.0 darwin-x64 node-v12.15.0
-$ easy-mock-api --help [COMMAND]
-USAGE
-  $ easy-mock-api COMMAND
 ...
 ```
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`easy-mock-api hello [FILE]`](#easy-mock-api-hello-file)
-* [`easy-mock-api help [COMMAND]`](#easy-mock-api-help-command)
+*  [`easy-mock-api init`](#easy-mock-api-init-file)
 
-## `easy-mock-api hello [FILE]`
+## `easy-mock-api init`
 
 describe the command here
 
 ```
 USAGE
-  $ easy-mock-api hello [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-
-EXAMPLE
-  $ easy-mock-api hello
-  hello world from ./src/hello.ts!
+  $ npx easy-mock-api init
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/private/easy-mock-api/blob/v0.0.0/src/commands/hello.ts)_
-
-## `easy-mock-api help [COMMAND]`
-
-display help for easy-mock-api
-
-```
-USAGE
-  $ easy-mock-api help [COMMAND]
-
-ARGUMENTS
-  COMMAND  command to show help for
-
-OPTIONS
-  --all  see all commands in CLI
-```
-
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
+_See code: [src/commands/init.ts](https://github.com/private/easy-mock-api/blob/v0.0.0/src/commands/init.ts)_
 <!-- commandsstop -->
