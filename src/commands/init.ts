@@ -25,14 +25,14 @@ export default class Init extends Command {
     )
   }
 
-  generateJson(endpoint: string): DefaultJsonFormat {
-    return {
+  generateJson(endpoint: string): DefaultJsonFormat[] {
+    return [{
       endpoint: endpoint,
       delay: 5000,
       body: {
         greeting: 'hello',
       },
-    }
+    }]
   }
 }
 

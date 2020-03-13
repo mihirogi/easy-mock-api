@@ -13,7 +13,7 @@ describe('init', () => {
   .command('init')
   .it('runs init', () => {
     expect(fs.existsSync(`${config.dirPath}/${config.fileName}`)).is.true
-    const createdJsonFile: DefaultJsonFormat = require(`${config.dirPath}/${config.fileName}`)
+    const createdJsonFile: DefaultJsonFormat = require(`${config.dirPath}/${config.fileName}`)[0]
     expect(createdJsonFile.endpoint).to.equal('/hello')
     expect(createdJsonFile.delay).to.equal(5000)
     expect(createdJsonFile.body).to.have.property('greeting')
