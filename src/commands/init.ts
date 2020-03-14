@@ -25,23 +25,39 @@ export default class Init extends Command {
     )
   }
 
-  generateJson(endpoint: string): DefaultJsonFormat[] {
-    return [{
-      endpoint: endpoint,
-      delay: 5000,
-      body: {
-        greeting: 'hello',
+  generateJson(endpoint: string): DefaultJsonFormat {
+    return {
+      port: 4200,
+      data: {
+        [endpoint]: {
+          body: {
+            message: 'please rewrite with JSON format data',
+          },
+          delay: 5000,
+          statusCode: 200,
+        },
+        '/sample': {
+          body: {
+            message: '/sample is example data',
+          },
+          delay: 5000,
+          statusCode: 200,
+        },
       },
-    }]
+    }
   }
 }
 
 export interface Response {
   value: string;
 }
-
 export interface DefaultJsonFormat {
-  endpoint: string;
-  delay: number;
-  body: any;
+  port: number;
+  data: {
+    [key: string]: {
+      body: any;
+      delay: number;
+      statusCode: number;
+    };
+  };
 }
