@@ -33,14 +33,14 @@ export default class Init extends Command {
           body: {
             message: 'please rewrite with JSON format data',
           },
-          delay: 5000,
+          delay: 1000,
           statusCode: 200,
         },
         '/sample': {
           body: {
             message: '/sample is example data',
           },
-          delay: 5000,
+          delay: 1000,
           statusCode: 200,
         },
       },
