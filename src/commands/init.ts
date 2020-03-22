@@ -1,8 +1,7 @@
 import {Command, flags} from '@oclif/command'
-import mkdirp = require('mkdirp');
 import enquirer = require('enquirer');
-import * as fs from 'fs'
 import {dirPath, fileName} from '../constants/config'
+import {generateJson, outputJson, createDir} from '../functions/api'
 
 export default class Init extends Command {
   static description = 'generate json file';
@@ -18,33 +17,11 @@ export default class Init extends Command {
       message: 'enter the api path',
       initial: '/sample',
     })
-    mkdirp.sync(dirPath)
-    fs.writeFileSync(
+    createDir(dirPath)
+    outputJson(
       `${dirPath}/${fileName}`,
-      JSON.stringify(this.generateJson(response.value))
+      JSON.stringify(generateJson(response.value))
     )
-  }
-
-  generateJson(endpoint: string): DefaultJsonFormat {
-    return {
-      port: 4200,
-      data: {
-        [endpoint]: {
-          body: {
-            message: 'please rewrite with JSON format data',
-          },
-          delay: 1000,
-          statusCode: 200,
-        },
-        '/sample': {
-          body: {
-            message: '/sample is example data',
-          },
-          delay: 1000,
-          statusCode: 200,
-        },
-      },
-    }
   }
 }
 
