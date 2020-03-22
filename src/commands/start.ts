@@ -1,7 +1,7 @@
 import {Command} from '@oclif/command'
 import {IncomingMessage, ServerResponse} from 'http'
 import ApiServer from '../singletons/api-server'
-import {generateApiMap} from '../functions/map-api'
+import {generateApiMap} from '../functions/api'
 
 export default class Start extends Command {
   static description = 'start mock api server';
