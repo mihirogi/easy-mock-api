@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/mihirogi/easy-mock-api/compare/v0.0.1...v0.0.2) (2020-03-23)
+
+
+### Bug Fixes
+
+* path ([#7](https://github.com/mihirogi/easy-mock-api/issues/7)) ([#8](https://github.com/mihirogi/easy-mock-api/issues/8)) ([27bd810](https://github.com/mihirogi/easy-mock-api/commit/27bd810185b69f139dcdf041dba323fde128b084))
+
 ### 0.0.1 (2020-03-23)
 
 
