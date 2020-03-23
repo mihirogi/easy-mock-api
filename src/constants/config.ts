@@ -1,2 +1,2 @@
-export const dirPath = `${require('app-root-path').path}/tools/easy-mock-api`
+export const dirPath = `${process.cwd()}/tools/easy-mock-api`
 export const fileName = 'api.json'
